@@ -1,0 +1,262 @@
+/* ------------------------------ */
+/* 🌿 BLOG SECTION BASE */
+/* ------------------------------ */
+
+.blog-section {
+  width: 100%;
+  padding: 3.5rem 6rem;
+  /* background: linear-gradient(180deg, #f8fff6 0%, #e8f5e9 100%); */
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+/* ------------------------------ */
+/* 🏷️ HEADING */
+/* ------------------------------ */
+
+/* .blog-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #130f40;
+  margin-bottom: 3rem;
+  text-transform: capitalize;
+}
+
+.blog-heading span {
+  color: #1e7f39;
+  position: relative;
+}
+
+.blog-heading span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1e7f39, #0055ff);
+  border-radius: 4px;
+} */
+
+/* ------------------------------ */
+/* 🧩 BLOG GRID */
+/* ------------------------------ */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-height: 400px;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* ------------------------------ */
+/* 💎 BLOG CARD */
+/* ------------------------------ */
+
+.blog-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 85, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 85, 255, 0.2);
+}
+
+/* ------------------------------ */
+/* 🖼️ IMAGE */
+/* ------------------------------ */
+
+.blog-image {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-image img {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(30, 127, 57, 0.1), rgba(0, 85, 255, 0.25));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.blog-card:hover .overlay {
+  opacity: 1;
+}
+
+/* ------------------------------ */
+/* 🧾 CONTENT */
+/* ------------------------------ */
+
+.blog-content {
+  padding: 1.8rem;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1e7f39;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.blog-meta i {
+  margin-right: 5px;
+  color: #0055ff;
+}
+
+.blog-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #130f40;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.blog-card:hover h3 {
+  color: #0055ff;
+}
+
+.blog-desc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------------------ */
+/* 🔘 BUTTON */
+/* ------------------------------ */
+
+/* .review-btn {
+  background: linear-gradient(135deg, #1e7f39, #0055ff);
+  color: #fff;
+  padding: 10px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 85, 255, 0.2);
+  border: none;
+  position: relative;
+  left: 5rem;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #0055ff, #1e7f39);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 85, 255, 0.3);
+} */
+
+.blog-content .btn-b {
+  position: relative;
+  top: 0.5rem;
+  left: 6.8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+
+}
+
+.blog-content .btn-b:hover {
+  background: linear-gradient(135deg, #00ffc8, #1e307f) 100%;
+  transform: translateY(-2px) scale(1.05);
+  color: yellow;
+}
+
+/* ------------------------------ */
+/* ✨ ANIMATION */
+/* ------------------------------ */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-card {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.blog-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.blog-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ------------------------------ */
+/* 📱 RESPONSIVE DESIGN */
+/* ------------------------------ */
+
+@media (max-width: 1200px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .blog-image {
+    height: 200px;
+  }
+
+  .blog-heading {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-heading {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+}

@@ -1,0 +1,313 @@
+
+
+/* ===========================
+   🌿 GLOBAL NAVBAR STYLES
+=========================== */
+
+.head-nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: linear-gradient(135deg, #0055ff, #1e7f39);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0, 85, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   🛒 LOGO
+=========================== */
+.logo .mylogo {
+  position: relative;
+  left: 3rem;
+  top: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #60c919;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.logo .mylogo i {
+  color: #5ad413;
+  font-size: 2rem;
+}
+
+.logo .mylogo:hover {
+  color: #c9e283;
+  transform: scale(1.05);
+}
+
+/* ===========================
+   🧭 NAVIGATION LIST
+=========================== */
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  top: 1.5rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: #edecf5;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 1.3rem;
+}
+
+.nav-link:hover {
+  color: #f0e87f;
+}
+
+/* .nav-link.active {
+  color: red;
+} */
+
+/* ===========================
+   🧾 DROPDOWN MENU
+=========================== */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 85, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.8rem 0;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  animation: dropdownFade 0.25s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 0.6rem 1.2rem;
+  color: #3a2903;
+  font-size: 1.2rem;
+  font-weight: 550;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(135deg, #1e7f39, #0055ff);
+  color: #efefef;
+  padding-left: 1.6rem;
+}
+
+/* ===========================
+   🧩 ICONS SECTION
+=========================== */
+.icons {
+  position: relative;
+  top: 0.8rem;
+  right: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.icons .fa {
+  font-size: 1.3rem;
+  background: rgba(128, 128, 128, 0.5);
+  padding: 0.6rem 1.2rem;
+  color: #e3e2e9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  top: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  border: none;
+}
+
+.icons .fa:hover {
+  color: #dae2f3;
+  transform: scale(1.2);
+  background: #012772;
+  
+}
+
+#menu-btn {
+  display: none; /* hidden on desktop */
+}
+
+/* ===========================
+   📱 MOBILE MENU
+=========================== */
+@media (max-width: 992px) {
+  .navigation {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 2rem 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+
+  .navigation.active {
+    left: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: none;
+    border: 1px solid rgba(0, 85, 255, 0.1);
+    padding: 0.5rem 0;
+    display: none;
+  }
+
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  #menu-btn {
+    display: block;
+    font-size: 1.6rem;
+  }
+}
+
+/* ===========================
+   💻 SMALL SCREENS (MOBILE)
+=========================== */
+@media (max-width: 600px) {
+  .head-nav {
+    padding: 0.6rem 5%;
+  }
+
+  .logo .mylogo {
+    font-size: 1.3rem;
+  }
+
+  .icons {
+    gap: 0.8rem;
+  }
+
+  .icons .fa {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .dropdown-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===========================
+   🧊 SCROLL SHADOW EFFECT
+=========================== */
+.head-nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 85, 255, 0.15);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+/* cart badge */
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 0.6rem;
+}
+
+.cart-icon-wrapper .fa-shopping-cart {
+  font-size: 1.15rem; /* adjust to match your icon size */
+}
+
+/* small red badge at top-right of icon */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #ff3b30;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  pointer-events: none; /* badge is not interactive */
+}
+
+/* ensure badge scales on small screens */
+@media (max-width: 480px) {
+  .cart-badge {
+    top: -6px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
+}

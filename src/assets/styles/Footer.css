@@ -1,0 +1,266 @@
+/* ------------------------------ */
+/* 🌿 FOOTER BASE */
+/* ------------------------------ */
+
+.footer {
+  width: 100%;
+  padding: 3rem 6rem;
+  /* background: linear-gradient(180deg, #e8f5e9 0%, #f8fff6 100%); */
+  color: #130f40;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ------------------------------ */
+/* 🧱 GRID LAYOUT */
+/* ------------------------------ */
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  background: rgb(192, 228, 178);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+
+.footer-box h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #044416;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-box p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+/* ------------------------------ */
+/* 🌐 ABOUT SECTION */
+/* ------------------------------ */
+
+.footer-box .social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-box .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e7f39, #0055ff);
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  /* font-size: 5rem; */
+  font-size: 1.3rem;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 85, 255, 0.4);
+}
+
+/* ------------------------------ */
+/* 📞 CONTACT & LINKS */
+/* ------------------------------ */
+
+.footer-link {
+  display: block;
+  color: #333;
+  font-size: 1rem;
+  margin: 0.8rem 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-link i,
+.footer-link svg {
+  color: #1e7f39;
+  margin-right: 2px;
+}
+
+.footer-link:hover {
+  color: #0055ff;
+  transform: translateX(3px);
+}
+
+/* ------------------------------ */
+/* 📨 NEWSLETTER */
+/* ------------------------------ */
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.email {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.email:focus {
+  border-color: #1e7f39;
+  box-shadow: 0 0 5px rgba(30, 127, 57, 0.3);
+}
+
+/* ------------------------------ */
+/* 🔘 BUTTON */
+/* ------------------------------ */
+
+/* .btn {
+  background: linear-gradient(135deg, #1e7f39, #0055ff);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #0055ff, #1e7f39);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 85, 255, 0.3);
+} */
+
+.footer .contact .btn-a {
+  position: inherit;
+  padding: 0.2rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 450;
+  border-radius: 0.5rem;  
+}
+
+.footer .contact .btn-a:hover {
+  background: linear-gradient(135deg, #0055ff, #1e7f39);
+  color: #fff;
+  transform: none;
+}
+
+.footer .newsletter .btn-a {
+  margin: 0.1rem 2rem;
+  position: inherit;
+}
+
+.footer .btn-a:hover {
+  background: linear-gradient(135deg, #00ffc8, #1e307f) 100%;
+  transform: translateY(-2px) scale(1.05);
+  color: yellow;
+}
+
+
+
+/* ------------------------------ */
+/* 💳 PAYMENT IMAGE */
+/* ------------------------------ */
+
+.payment-img {
+  width: 80%;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  filter: brightness(1);
+  transition: transform 0.3s ease;
+}
+
+.payment-img:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------ */
+/* 🧾 COPYRIGHT SECTION */
+/* ------------------------------ */
+
+.credit {
+  text-align: center;
+  font-size: 0.95rem; 
+  padding: 0.5rem 0;
+  color: #e7d7d7;
+  border-top: 1px solid rgba(0, 85, 255, 0.1);
+  background: rgb(61, 61, 221);
+  border-radius: 0.5rem;
+}
+
+.credit span {
+  color: #adada8;
+  font-weight: 600;
+}
+
+/* ------------------------------ */
+/* ✨ ANIMATIONS */
+/* ------------------------------ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-box {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.footer-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.footer-box:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.footer-box:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* ------------------------------ */
+/* 📱 RESPONSIVE DESIGN */
+/* ------------------------------ */
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    align-items: center;
+  }
+
+  .payment-img {
+    width: 60%;
+  }
+}

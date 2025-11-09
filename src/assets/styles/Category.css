@@ -1,0 +1,240 @@
+/* ------------------------------ */
+/* 🌿 CATEGORY SECTION BASE */
+/* ------------------------------ */
+
+.categories-section {
+  width: 100%;
+  padding: 3rem 6rem;
+  /* background: linear-gradient(180deg, #f8fff6 0%, #e8f5e9 100%); */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ------------------------------ */
+/* 🏷️ STICKY HEADING (SHRINK + BLUR) */
+/* ------------------------------ */
+
+/* .categories-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #130f40;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(248, 255, 246, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(0, 85, 255, 0.1);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.categories-heading span {
+  color: #1e7f39;
+  position: relative;
+}
+
+.categories-heading span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1e7f39, #0055ff);
+  border-radius: 4px;
+} */
+
+/* ------------------------------ */
+/* 🧩 SCROLLABLE GRID */
+/* ------------------------------ */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
+
+  /* ✅ Two visible rows with scroll */
+  /* max-height: calc((320px * 2) + 2rem); */
+  max-height: 565px;
+  overflow-y: auto;
+  padding: 0.5rem 0.7rem 0.9rem 0.5rem;
+  scroll-behavior: smooth;
+  background: rgba(102, 51, 153, 0.021);
+  border-radius: 1rem;
+}
+
+/* Custom scrollbar */
+.category-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category-grid::-webkit-scrollbar-thumb {
+  /* background: linear-gradient(180deg, #1e7f39, #0055ff); */
+  border-radius: 10px;
+}
+
+.category-grid::-webkit-scrollbar-track {
+  /* background: #f0f0f0; */
+  border-radius: 10px;
+}
+
+/* ------------------------------ */
+/* 💎 CATEGORY CARD */
+/* ------------------------------ */
+
+.category-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 85, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 85, 255, 0.2);
+}
+
+/* ------------------------------ */
+/* 🖼️ IMAGE */
+/* ------------------------------ */
+
+.category-img {
+  width: 100%;
+  height: 12.6rem;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(30, 127, 57, 0.2);
+  border-radius: 1rem;
+}
+
+.category-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-img img {
+  transform: scale(1.08);
+}
+
+/* ------------------------------ */
+/* 🧾 TEXT CONTENT */
+/* ------------------------------ */
+
+.category-info {
+  padding: 1.5rem 1rem;
+}
+
+.category-info h3 {
+  font-size: 1.3rem;
+  color: #130f40;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.category-info p {
+  font-size: 1rem;
+  color: #1e7f39;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* ------------------------------ */
+/* 🔘 BUTTON */
+/* ------------------------------ */
+
+.category-info .btn-b {
+  position: inherit;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.category-info .btn-b:hover {
+ background: linear-gradient(135deg, #00ffc8, #1e307f) 100%;
+  transform: translateY(-2px) scale(1.05);
+  color: yellow;
+}
+
+/* ------------------------------ */
+/* ✨ ANIMATIONS */
+/* ------------------------------ */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-card {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.category-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.category-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.category-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* ------------------------------ */
+/* 📱 RESPONSIVE DESIGN */
+/* ------------------------------ */
+
+@media (max-width: 1200px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-height: calc((320px * 2) + 2rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: calc((300px * 2) + 2rem);
+  }
+
+  .category-img {
+    height: 180px;
+  }
+
+  .categories-heading {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-height: calc((260px * 2) + 1rem);
+  }
+
+  .category-img {
+    height: 160px;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+
+  .categories-heading {
+    font-size: 2rem;
+  }
+}
